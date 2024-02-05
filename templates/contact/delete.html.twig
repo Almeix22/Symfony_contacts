@@ -1,0 +1,10 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    Suppression de {{ contact.lastname}}, {{ contact.firstname }}
+{% endblock %}
+
+{% block body %}
+    <h1>Suppression de {{ contact.lastname}}, {{ contact.firstname }}</h1>
+    {{ include('contact/_formDelete.html.twig', {form : form,label_submit: 'Supprimer'}, with_context = false) }}
+{% endblock %}

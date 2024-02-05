@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+{{ contact.lastname }} {{ contact.firstname }}
+{% endblock %}
+
+{% block body %}
+    {%  if is_granted('ROLE_ADMIN') %}
+    <button class="btn btn-primary" style = "float: right" onclick="window.location.href ='http://localhost:8000/contact/{{ contact.id }}/update';">Modifier</button>
+    <button class="btn btn-primary" style = "float: right" onclick="window.location.href ='http://localhost:8000/contact/{{ contact.id }}/delete';">Supprimer</button>
+    {% endif %}
+    <h1>Bonjour {{ contact.lastname }} {{ contact.firstname }}</h1>
+    <p>Information vous concernant : </p>
+        <ul>
+            <li>Nom : {{ contact.lastname }}</li>
+            <li>Prénom : {{ contact.firstname }}</li>
+            <li>Email : {{ contact.email }}</li>
+            <li>Phone : {{ contact.phone }}</li>
+            <li>Catégorie : {{ contact.category.name ?? 'Aucune Catégorie' }}</li>
+        <ul>
+
+{% endblock %}

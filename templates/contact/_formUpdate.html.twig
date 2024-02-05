@@ -1,0 +1,8 @@
+{{ form_start(form, {'method': 'POST'}) }}
+Prénom : {{ form_widget(form.firstname, {'attr': {'class': 'firstname'}}) }} <br>
+Nom : {{ form_widget(form.lastname, {'attr': {'class': 'lastname'}}) }} <br>
+Email : {{ form_widget(form.email, {'attr': {'class': 'email'}}) }} <br>
+Phone : {{ form_widget(form.phone, {'attr': {'class': 'phone'}}) }} <br>
+Category : {{ form_widget(form.category, {'attr': {'class': 'category'}}) }}
+<button type="submit" class="btn btn-primary">Modifier</button>
+{{ form_end(form) }}

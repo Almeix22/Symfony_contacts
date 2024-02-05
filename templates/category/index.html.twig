@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des Categories!{% endblock %}
+
+{% block body %}
+    <h1>Liste des catégories</h1>
+    <ul class = 'contacts'>
+        {% for c in categories %}
+            <li><a href="http://localhost:8000/category/{{ c.category.id }}"><span class = "name">{{ c.category.name }} </span></span><span class="badge bg-secondary">{{ c.count }} contacts</span></a></li>
+    {% endfor %}
+        </ul>
+{% endblock %}

@@ -1,0 +1,10 @@
+
+    <h1>Création d'un nouveau contact</h1>
+    {{ form_start(form, {'method': 'POST'}) }}
+    {{ form_row(form.firstname, {'label': 'Prénom'}) }} <br>
+    {{ form_row(form.lastname, {'label': 'Nom'}) }} <br>
+    {{ form_row(form.email, {'label': 'Email'}) }} <br>
+    {{ form_row(form.phone, {'label': 'Phone'}) }} <br>
+    {{ form_row(form.category, {'label': 'Category', 'placeholder': 'Category ?'})  }}
+    <button type="submit" class="btn btn-primary" >{{ label_submit }}</button>
+    {{ form_end(form) }}

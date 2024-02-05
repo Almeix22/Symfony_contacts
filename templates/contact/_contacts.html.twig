@@ -1,0 +1,23 @@
+<ul class="contacts">
+    {% for contact in lstContacts %}
+        <li>
+            {%  if is_granted('ROLE_ADMIN') %}
+            <a href = http://localhost:8000/contact/{{ contact.id }}/update>
+                <span class="material-symbols-outlined"><button type="button" class="btn btn-warning">edit</button></span>
+            </a>
+            <a href="http://localhost:8000/contact/{{ contact.id }}/delete">
+                <span class="material-symbols-outlined"><button type="button" class="btn btn-danger">delete</button></span>
+            </a>
+            {% endif %}
+            <a href="/contact/{{ contact.id }}">
+                <span class="contact">
+                    <span class="lastname">{{ contact.lastname }}</span>
+                    <span class="firstname">{{ contact.firstname}}</span>
+                </span>
+            </a>
+        {% if show_category??true and contact.category is not null %}
+            <span class="Category"><span class="badge text-bg-primary"> {{ contact.category.name ?? "Pas de catégorie"}}</span></span>
+        {% endif %}
+        </li>
+    {% endfor %}
+    <ul>
